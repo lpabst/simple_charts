@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import PieChart from "./components/PieChart";
+
+const pieChartTitleData = {
+  text: "Budget",
+};
+
+const pieChartSectionData = [
+  {
+    label: "rent",
+    value: 1860,
+    color: "blue",
+  },
+  {
+    label: "gas",
+    value: 250,
+    color: "green",
+  },
+  {
+    label: "car payment",
+    value: 300,
+  },
+  {
+    label: "groceries",
+    value: 650,
+  },
+  {
+    label: "entertainment",
+    value: 150,
+  },
+  {
+    label: "personal money",
+    value: 40,
+  },
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div style={{ width: "300px", height: "300px" }}>
+        <PieChart data={pieChartSectionData} titleData={pieChartTitleData} />
+      </div>
     </div>
   );
 }
